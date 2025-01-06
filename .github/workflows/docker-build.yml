@@ -22,6 +22,7 @@ jobs:
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v4
       with:
-        context: .../my-react-app/
+        context: ./my-react-app
+        file: ./my-react-app/Dockerfile
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/solar-system:${{ github.sha }},${{ secrets.DOCKERHUB_USERNAME }}/solar-system:latest
